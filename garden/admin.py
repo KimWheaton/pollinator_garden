@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Profile, Plant, GrowingZone
+from .models import Gardener, Plant, Image
 
-admin.site.register(Profile)
+admin.site.register(Gardener)
 admin.site.register(Plant)
-admin.site.register(GrowingZone)
+admin.site.register(Image)

@@ -1,0 +1,12 @@
+plant models should include:
+    flowering time
+    color
+    shape (tubular, flat, etc)
+    type (grass, perennial, etc)
+    good for which pollinators (bee, hummingbird, butterfly/moth)
+    width and height
+    sun requirements
+    water requirements
+    native to NC
+    
+
