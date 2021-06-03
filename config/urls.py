@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from garden import views
+from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="home"),
+    path('accounts/', include('registration.backends.simple.urls')),
 ]
