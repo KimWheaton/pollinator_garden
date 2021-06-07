@@ -18,8 +18,12 @@ from django.urls import path
 from garden import views
 from django.urls.conf import include
 
+# add imports for images
+from django.conf.urls.static import static
+from config import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="home"),
     path('accounts/', include('registration.backends.simple.urls')),
-]
+]   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

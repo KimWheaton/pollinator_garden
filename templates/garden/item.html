@@ -1,0 +1,9 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+<h1>PLANT SELECTION</h1>
+<p>Some content goes here</p>
+    <h2>{{plant.name}}</h2>
+    {% if image != None %} 
+    <img src="{{ image.url }}">
+{% endblock %} 

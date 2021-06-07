@@ -31,9 +31,22 @@ class Plant(models.Model):
         ('MEDIUM', 'Medium'),
         ('LOW', 'Low'),
 ]
+    TREE = 'T'
+    SHRUB = 'S'
+    FLOWER = 'F'
+    GRASS = 'G'
+
+    TYPE_CHOICES = [
+        ('TREE', 'Tree'),
+        ('SHRUB', 'Shrub'),
+        ('FLOWER', 'Flower'),
+        ('GRASS', 'Grass'),
+]
+
     common_name = models.CharField(max_length=240, blank=True, null=True)
     scientific_name = models.CharField(max_length=240, blank=True, null=True)
     # zone = models.ManyToManyField('GrowingZone', related_name="plants")
+    plant_type = models.CharField(choices=TYPE_CHOICES, blank=True, null=True, max_length=100)
     moisture_need = models.CharField(choices=WATER_CHOICES, max_length=100)
     color = models.CharField(max_length=240, blank=True, null=True)
     flowering_time = models.CharField(max_length=240, blank=True, null=True)
@@ -47,7 +60,7 @@ def __str__(self):
 
 class Image(models.Model):
     plant = models.ForeignKey(Plant, related_name="images", on_delete=models.CASCADE)
-    image = models.ImageField(upload_to=user_directory_path, null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
 def __str__(self):
     return self.image
